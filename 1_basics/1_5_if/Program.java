@@ -15,5 +15,11 @@ public class Program {
         else {
             System.out.printf("%d on half\n", randNumber);  
         }
+
+        if (randNumber % 2 == 0) {
+            System.out.printf("%d is even\n", randNumber);
+        } else {
+            System.out.printf("%d is odd\n", randNumber);
+        }
     }
 }

@@ -1,4 +1,7 @@
 import java.lang.Math;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
 
 public class Program {
     public static void main(String[] args) {
@@ -21,5 +24,29 @@ public class Program {
         } else {
             System.out.printf("%d is odd\n", randNumber);
         }
+
+        // Switch stmnt
+        switch (randNumber % 2) {
+            case 0: System.out.printf("%d is even\n", randNumber); break;
+            case 1: System.out.printf("%d is odd\n", randNumber); break;
+           	default:
+                System.err.println("Unreachable!");
+                assert false;
+      		break;
+        }
+
+        LocalDate date = LocalDate.now();
+        DayOfWeek dayOfWeek = date.getDayOfWeek();
+        int idayOfWeek = switch (dayOfWeek) {
+            case MONDAY -> 1;
+            case TUESDAY -> 2;
+            case WEDNESDAY -> 3;
+            case THURSDAY -> 4;
+            case FRIDAY -> 5;
+            case SATURDAY -> 6;
+            case SUNDAY -> 7;
+        };
+
+        System.out.printf("%s is %d integer value", dayOfWeek.toString(), idayOfWeek);
     }
 }

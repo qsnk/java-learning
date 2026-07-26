@@ -1,4 +1,5 @@
 .idea
+.zed
 .vscode
 .DS_Store
 .env

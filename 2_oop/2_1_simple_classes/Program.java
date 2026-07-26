@@ -56,7 +56,7 @@ class Node {
     }
 
     public void currentPosition() {
-        System.out.printf("%s (parent) <-- %s (this) --> %s (next)\n", parent, this, next);
+        System.out.printf("%s (parent) <-- %s (this) --> %s (child)\n", parent, this, next);
     }
 
     public void displayFromCurrent() {

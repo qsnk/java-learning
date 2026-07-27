@@ -83,7 +83,7 @@ class NodeList {
     }
 
     public void remove(int index) {
-        if (index > length() || index < 0) throw new IndexOutOfBoundsException("Index out of range");
+        if (index >= length() || index < 0) throw new IndexOutOfBoundsException("Index out of range");
 
         if (index == 0) {
             this.head = this.head.next;
@@ -99,13 +99,8 @@ class NodeList {
             currentNode = currentNode.next;
             currentIndex++;
         }
-
-        OneWayNode tail = getTail();
-        if (currentNode.equals(tail)) {
-            prevNode.next = null;
-        } else {
-            prevNode.next = currentNode.next;
-        }
+        
+        prevNode.next = currentNode.next;
     }    
     
     public void display() {

@@ -13,10 +13,10 @@ public class Program {
             System.out.printf("%d is greater than 50\n", randNumber);
         }
         else if (randNumber < 50) {
-            System.out.printf("%d is lower than 50\n", randNumber);  
+            System.out.printf("%d is lower than 50\n", randNumber);
         }
         else {
-            System.out.printf("%d on half\n", randNumber);  
+            System.out.printf("%d on half\n", randNumber);
         }
 
         if (randNumber % 2 == 0) {
@@ -47,6 +47,10 @@ public class Program {
             case SUNDAY -> 7;
         };
 
-        System.out.printf("%s is %d integer value", dayOfWeek.toString(), idayOfWeek);
+        System.out.printf("%s is %d integer value\n", dayOfWeek.toString(), idayOfWeek);
+
+        // Тернарный оператор
+        boolean isEven = randNumber % 2 == 0 ? true : false;
+        System.out.printf("%d is even – %s\n", randNumber, isEven);
     }
 }

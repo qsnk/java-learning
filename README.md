@@ -10,7 +10,8 @@
   1.7.  [Работа со строками](./1_basics/1_7_strings)\
   1.8.  [Массивы](./1_basics/1_8_arrays)\
   1.9.  [Функции](./1_basics/1_9_functions)\
-  1.10. [Обработка исключений](./1_basics/1_10_exceptions)
+  1.10. [Обработка исключений](./1_basics/1_10_exceptions)\
+  1.11. [Пакеты](./1_basics/1_11_packages)
 2. [ООП](./2_oop)\
   2.1. [Классы](./2_oop/2_1_classes)\
   2.2. [Record](./2_oop/2_2_records)

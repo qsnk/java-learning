@@ -7,6 +7,9 @@ public class Program {
 }
 
 record Point (int x, int y) {
+    // "x" is final int
+    // "y" is final int
+
     @Override
     public final String toString() {
         return String.format("Point{x: %d, y: %d}", this.x, this.y);

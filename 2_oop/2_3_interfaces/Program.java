@@ -14,7 +14,7 @@ interface IMovable2D {
     public void move(int dx, int dy);
 
     public int getX();
-    public int gety();
+    public int getY();
 }
 
  class Point implements IMovable2D {
@@ -39,7 +39,7 @@ interface IMovable2D {
 	}
 
 	@Override
-	public int gety() {
+	public int getY() {
 	    return this.y;
 	}
 }
@@ -60,8 +60,8 @@ class Grid {
     public void draw() {
         for (int y = 0; y < HEIGHT; y++) {            
             for (int x = 0; x < WIDTH; x++) {
-                if (x == this.movableObject.getX() && y == this.movableObject.gety()) {
-                    System.out.print("\033[31mP\033[0m ");
+                if (x == this.movableObject.getX() && y == this.movableObject.getY()) {
+                    System.out.print("\033[31m" + "P" + "\033[0m ");
                     continue;
                 }
                 

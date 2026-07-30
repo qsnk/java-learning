@@ -1,5 +1,8 @@
 public class Program {
     public static void main(String[] args) {
+        Default def = new Default();
+        def.display();
+        
         NodeList list = new NodeList();
         list.display();
 
@@ -43,6 +46,38 @@ public class Program {
         } catch (IndexOutOfBoundsException e) {
             System.err.printf("Failed to remove node: %s", e.getMessage());
         }
+    }
+}
+
+// Какие значения по умолчанию имееют поля
+class Default {
+    byte byteValue;
+    short shortValue;
+    int intValue;
+    long longValue;
+    float floatValue;
+    double doubleValue;
+    char charValue; // '\u0000' - null character
+    String strValue;
+    boolean boolValue;
+
+    int[] intArr;
+    String[] strArr;
+
+    public void display() {
+        System.out.println("Значения по умолчанию:");
+        System.out.println("byte = " + this.byteValue);
+        System.out.println("short = " + this.shortValue);
+        System.out.println("int = " + this.intValue);
+        System.out.println("long = " + this.longValue);
+        System.out.println("float = " + this.floatValue);
+        System.out.println("double = " + this.doubleValue);
+        System.out.println("char = " + this.charValue);
+        System.out.println("String = " + this.strValue);
+        System.out.println("boolean = " + this.boolValue);
+        System.out.println("int array = " + this.intArr);
+        System.out.println("String array = " + this.strArr);
+        System.out.println();
     }
 }
 

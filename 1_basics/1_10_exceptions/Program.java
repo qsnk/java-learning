@@ -1,6 +1,9 @@
 public class Program {
     public static void main(String[] args) {
         // Throwable - базовый класс для всех исключений
+        // Исключения можно разделить на 2 вида:
+        // 1. Проверяемые (англ. checked)
+        // 2. Непроверяемые (англ. unchecked)
 
         int[] numbers = new int[] {1, 2, 3, 4, 5};        
         System.out.printf("Первый элемент массива: %d\n", numbers[0]);

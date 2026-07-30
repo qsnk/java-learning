@@ -1,5 +1,17 @@
 public class Program {
     public static void main(String[] args) {
+        /* Базовые типы:
+         * byte
+         * short
+         * int
+         * long
+         * float
+         * double
+         * char
+         * String
+         * boolean
+        */
+         
         String name = "Mikhail";
         byte age = 24;
         float weight = 65.5f;

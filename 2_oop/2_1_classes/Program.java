@@ -1,7 +1,28 @@
+import figures.Rectangle;
+import figures.Circle;
+import figures.Square;
+
 public class Program {
     public static void main(String[] args) {
         Default def = new Default();
         def.display();
+        System.out.println("---------------------------");
+
+        Rectangle rect = new Rectangle(10, 15);
+        rect.display();
+        rect.displayPosition();
+
+        rect.setWidth(-1);
+        rect.display();
+        rect.setWidth(20);
+        rect.display();
+
+        Circle circle = new Circle(9.35f);
+        circle.display();
+        
+        Square square = new Square(10);
+        square.display();
+        System.out.println("---------------------------");
         
         NodeList list = new NodeList();
         list.display();
@@ -44,7 +65,7 @@ public class Program {
         try {
             list2.remove(999);
         } catch (IndexOutOfBoundsException e) {
-            System.err.printf("Failed to remove node: %s", e.getMessage());
+            System.err.printf("Failed to remove node: %s\n", e.getMessage());
         }
     }
 }
@@ -77,7 +98,6 @@ class Default {
         System.out.println("boolean = " + this.boolValue);
         System.out.println("int array = " + this.intArr);
         System.out.println("String array = " + this.strArr);
-        System.out.println();
     }
 }
 

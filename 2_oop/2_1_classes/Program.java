@@ -1,6 +1,7 @@
 import figures.Rectangle;
 import figures.Circle;
 import figures.Square;
+import figures.Shape;
 
 public class Program {
     public static void main(String[] args) {

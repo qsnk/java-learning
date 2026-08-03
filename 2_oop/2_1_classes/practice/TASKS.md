@@ -18,6 +18,23 @@ Example 3:
 Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 Output: [8,9,9,9,0,0,0,1]
 ```
+
+## Remove Nth Node From End of List. Leetcode #19
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
+ 
+```
+Example 1:
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+
+Example 2:
+Input: head = [1], n = 1
+Output: []
+
+Example 3:
+Input: head = [1,2], n = 1
+Output: [1]
+```
  
 ## Merge Two Sorted Lists. Leetcode #21
 You are given the heads of two sorted linked lists list1 and list2.

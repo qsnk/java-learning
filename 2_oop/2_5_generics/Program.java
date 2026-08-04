@@ -21,6 +21,9 @@ public class Program {
 
         list2.remove(0);
         list2.show();
+
+        // Вызов обобщенного метода
+        Util.<Integer>getType(5);
     }
 }
 
@@ -84,5 +87,14 @@ class NodeList<T> {
             current = current.next;
         }
         System.out.println(current.val);
+    }
+    
+}
+
+class Util {
+    // Метод с универсальным параметром T
+    public static <T> void getType(T item) { 
+        System.out.printf("Работаем с типом: %s\n", item.getClass());
+        System.out.printf("Значение: %s\n", item.toString());
     }
 }

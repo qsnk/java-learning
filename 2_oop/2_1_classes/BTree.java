@@ -1,5 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * TreeNode
@@ -22,13 +22,8 @@ public class BTree {
     public BTree() {}
     public BTree(TreeNode root) { this.root = root; }
 
-    public void show() {
-        if (this.root == null) { System.out.println("Tree is empty!"); return; }
-        lnr(this.root);
-    }
-
     // Прямой обход (NLR)
-    private void nlr(TreeNode node) {
+    public void nlr(TreeNode node) {
         if (node == null) return;
         
         visit(node);
@@ -37,7 +32,7 @@ public class BTree {
     }
     
     // inorder обход (Центрированный обход)
-    private void lnr(TreeNode node) {
+    public void lnr(TreeNode node) {
         if (node == null) return;
         
         lnr(node.left);
@@ -47,12 +42,30 @@ public class BTree {
 
     
     // Обратный обход (LRN)
-    private void lrn(TreeNode node) {
+    public void lrn(TreeNode node) {
         if (node == null) return;
         
         lrn(node.left);
         lrn(node.right);
         visit(node);
+    }
+
+    // Обход в ширину (breadth-first search, BFS)
+    public void bfs() {
+        if (this.root == null) return;
+        
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(this.root);
+
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.remove();
+
+            if (node == null) break;
+            
+            visit(node);
+            queue.add(node.left);
+            queue.add(node.right);
+        }
     }
 
     private void visit(TreeNode node) {
@@ -82,6 +95,10 @@ public class BTree {
         
         BTree tree = new BTree(node1);
 
-        tree.show();
+        tree.lnr(tree.root);
+        System.out.println();
+
+        tree.bfs();
+        System.out.println();
     }
 }

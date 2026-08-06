@@ -13,6 +13,15 @@ class TreeNode {
     public TreeNode(int value, TreeNode left, TreeNode right) { this.val = value; this.left = left; this.right = right; }
 }
 
+enum Position {
+    ROOT,
+    LEFT,
+    RIGHT
+}
+
+
+record TreeNodePlus(int val, Position pos, TreeNode left, TreeNode right) {}
+
 /**
  * BTree
  */
@@ -39,7 +48,6 @@ public class BTree {
         visit(node);
         lnr(node.right);
     }
-
     
     // Обратный обход (LRN)
     public void lrn(TreeNode node) {
@@ -60,7 +68,7 @@ public class BTree {
         while (!queue.isEmpty()) {
             TreeNode node = queue.remove();
 
-            if (node == null) break;
+            if (node == null) continue;
             
             visit(node);
             queue.add(node.left);
@@ -70,6 +78,46 @@ public class BTree {
 
     private void visit(TreeNode node) {
         System.out.printf("%d ", node.val);
+    }
+
+    private void visualize() {
+        if (this.root == null) { System.out.println("Tree is empty!"); return; }
+
+        Queue<TreeNodePlus> queue = new LinkedList<TreeNodePlus>();
+        queue.add(new TreeNodePlus(this.root.val, Position.ROOT, this.root.left, this.root.right));
+
+        int gap = 10;
+
+        while (!queue.isEmpty()) {
+            TreeNodePlus node = queue.remove();
+
+            if (node == null) continue;
+
+            for (int i = 0; i < gap; i++) { System.out.print(" "); }
+
+            switch (node.pos()) {
+               	case ROOT:  		
+                    System.out.printf("%d\n", node.val());
+                    for (int i = 0; i < gap - 1; i++) { System.out.print(" "); }
+                    System.err.println("/ \\");
+              		break;
+                            
+               	case LEFT:
+                    System.out.printf("%d", node.val());
+              		break;
+                
+               	case RIGHT:
+                    System.out.printf("  %d\n", node.val());
+                    // for (int i = 0; i < gap - 1; i++) { System.out.print(" "); }
+                    System.err.println("  / \\");
+              		break;
+            }
+            
+            queue.add(new TreeNodePlus(node.left().val, Position.LEFT, node.left().left, node.left().right));
+            queue.add(new TreeNodePlus(node.right().val, Position.RIGHT, node.right().left, node.right().right));
+            gap -= 2;
+        }
+            
     }
 
     public static void main(String[] args) {
@@ -100,5 +148,7 @@ public class BTree {
 
         tree.bfs();
         System.out.println();
+
+        tree.visualize();
     }
 }
